@@ -3,16 +3,23 @@ on:
  push:
    tags:
      - "v*"
+
+permissions:
+  contents: write
+
 jobs:
   build-guide:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: xu-cheng/latex-action@v3
-        with: 
-          root_file: pmd-ont-dev-guide.tex
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
         with:
-          name: artifact
-          path: pmd-ont-dev-guide.pdf
+          root_file: ontology-guide.tex
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: ontology-guide.pdf
