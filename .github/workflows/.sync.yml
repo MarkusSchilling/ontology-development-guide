@@ -23,10 +23,17 @@ jobs:
       - name: Pull upstream
         run: git pull --unshallow
 
+      - name: Check if workflow file is modified
+        id: check_workflow_changes
+        run: |
+          git diff --name-only HEAD^ HEAD | grep -qE '\.github/workflows/'
+
       - name: Fetch upstream changes
+        if: steps.check_workflow_changes.outputs.return-value == '0'
         run: git fetch upstream
 
       - name: Merge upstream changes
+        if: steps.check_workflow_changes.outputs.return-value == '0'
         run: git merge upstream/main --no-edit --allow-unrelated-histories || echo "Merge conflict occurred"
 
       - name: Check for merge conflicts
@@ -39,4 +46,5 @@ jobs:
           fi
 
       - name: Push changes to fork
+        if: steps.check_workflow_changes.outputs.return-value == '0'
         run: git push origin main
