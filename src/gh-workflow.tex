@@ -66,7 +66,7 @@ The experts agree that they have reached a consensus and document their discussi
 \subsection{Implementing a change}
 \begin{itemize}
     \item  Work should be done in a separate branch named ``[IssueNumber]"
-    \item add issue number to PR, use "closes \# issue number" to make {\github} close the issue once the PR is merged
+    \item add issue number to PR, use "closes \#[IssueNumber]" to make {\github} close the issue once the PR is merged
     \item update changelog and/or term tracking
 \end{itemize}
 
@@ -90,7 +90,7 @@ The following checklist can guide the review:
     \item[$\Box$] Are changes placed in the correct file, i.g. in case of a modular structure?
     \item[$\Box$] Are all steps of the requested changes done according to the issue and the expert decision?
     \item[$\Box$] Are there only changes that were previously agreed on in the discussion?
-    \item[$\Box$] Are all changes made intentional? (e.g. Sometimes Protégé rearranges things which goes wrong in rare cases)
+    \item[$\Box$] Are all changes made intentional? (e.g. Sometimes Protégé rearranges things which goes wrong in rare cases.)
     \item[$\Box$] Are all relevant changes mentioned in the changelog / term trackers?
 \end{itemize}
     
@@ -98,7 +98,7 @@ The following checklist can guide the review:
 Once Dillan is done with the implementation and pushed his proposed changes to {\github}, he marks the PR as "ready for review" and assigns Betty and Eric, a domain expert, as reviewers. 
 
 Both start the review process by checking the questions of the reviewer's guide (list above). 
-Betty has a change request, because Dillan missed to add "microscope" to the list of added terms in the changelog and marks this in the PR. Eric is content with the implementation and approves the PR, after Dillan added the note the the changelog.
+Betty has a change request, because Dillan missed to add "microscope" to the list of added terms in the changelog and marks this in the PR. Eric is content with the implementation and approves the PR, after Dillan added the note the changelog.
 
 After the approval and after the automated checks (CI) in {\github} were successful, Dillan merges the PR to the development branch. The term "microscope" has been added to the ontology.
 \end{example}
