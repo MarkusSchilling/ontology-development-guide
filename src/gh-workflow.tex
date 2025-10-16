@@ -4,7 +4,7 @@ Ontology development unfolds across two primary platforms: {\github} issues and 
 
 In the following, we propose a general workflow from a user request to the final extension of the ontology.
 
-An example for this workflow and instructions on how to create your own can be found in our example repository.\footnote{\url{https://github.com/open-ontology-community/example-ontology-repository}}
+An example for this workflow and instructions on how to create your own can be found in our example repository.\footnote{\url{https://github.com/scientific-ontology-network/example-ontology-repository}}
 
 \subsection{Reporting missing classes/properties/axioms}
 
@@ -33,11 +33,11 @@ We recommend a few simple rules for how issues should be structured:
 The ontology development takes place in {\github} issues. The main goal of these issues is to collect different opinions on the matter at hand and find a solution that reflects a consensus among all experts.
 
 \begin{enumerate}
-    \item \textbf{Check scope: } A lead developer evaluates whether the new concept fits into the scope definition of the ontology
+    \item \textbf{Check scope: } A lead developer evaluates whether the new concept fits into the scope definition of the ontology.
     \item \textbf{Assign:} Assign a single ontology developer (further called \textit{assignee}) who is responsible for the implementation of this new concept.
     \item \textbf{Draft:} The assignee drafts a definition of the new concept and possible subsumption relations and axioms.
     \item \textbf{Discuss:} Other developers give feedback on these proposals and contribute to the discussion until a consensus is reached.
-    \item \textbf{Agree or Talk:} If the discussion exceeds {\issuediscussionlimit} posts, it is moved to online meetings
+    \item \textbf{Agree or Talk:} If the discussion exceeds {\issuediscussionlimit} posts, it is moved to online meetings.
 \end{enumerate}
 
 \begin{example}
@@ -59,14 +59,14 @@ Therefore, we recommend regular developer meetings to address these tough issues
 
 \begin{example}
 In the next developer meeting, Betty, Claire and Dillan revisit issue 1314. During the discussion, they conclude that it is a function of microscopes to be used in magnifying processes. Therefore they decide to use the definition \emph{``A microscope is an object that can be used to magnify other objects''} and add the axiom
-\emph{```microscope` `has~function` \textbf{some} \`magnifying~function`''}.
+\emph{```microscope` `has~function` \textbf{some} `magnifying~function`''}.
 The experts agree that they have reached a consensus and document their discussion in issue 1314. Dillan is tasked with the implementation of this issue.
 \end{example}
 
 \subsection{Implementing a change}
 \begin{itemize}
     \item  Work should be done in a separate branch named ``[IssueNumber]"
-    \item add issue number to PR, use "closes \# issue number" to make {\github} close the issue once the PR is merged
+    \item add issue number to PR, use "closes \#[IssueNumber]" to make {\github} close the issue once the PR is merged
     \item update changelog and/or term tracking
 \end{itemize}
 
@@ -90,7 +90,7 @@ The following checklist can guide the review:
     \item[$\Box$] Are changes placed in the correct file, i.g. in case of a modular structure?
     \item[$\Box$] Are all steps of the requested changes done according to the issue and the expert decision?
     \item[$\Box$] Are there only changes that were previously agreed on in the discussion?
-    \item[$\Box$] Are all changes made intentional? (e.g. Sometimes Protégé rearranges things which goes wrong in rare cases)
+    \item[$\Box$] Are all changes made intentional? (e.g. Sometimes Protégé rearranges things which goes wrong in rare cases.)
     \item[$\Box$] Are all relevant changes mentioned in the changelog / term trackers?
 \end{itemize}
     
@@ -98,9 +98,9 @@ The following checklist can guide the review:
 Once Dillan is done with the implementation and pushed his proposed changes to {\github}, he marks the PR as "ready for review" and assigns Betty and Eric, a domain expert, as reviewers. 
 
 Both start the review process by checking the questions of the reviewer's guide (list above). 
-Betty has a change request, because Dillon missed to add "microscope" to the list of added terms in the changelog and marks this in the PR. Eric is content with the implementation and approves the PR, after Dillon added the note the the changelog.
+Betty has a change request, because Dillan missed to add "microscope" to the list of added terms in the changelog and marks this in the PR. Eric is content with the implementation and approves the PR, after Dillan added the note the changelog.
 
-After the approval and after the automated checks (CI) in {\github} were successful, Dillon merges the PR to the development branch. The term "microscope" has been added to the ontology.
+After the approval and after the automated checks (CI) in {\github} were successful, Dillan merges the PR to the development branch. The term "microscope" has been added to the ontology.
 \end{example}
 
 \paragraph{Structure of the repository}
