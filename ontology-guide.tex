@@ -1,31 +1,30 @@
-\documentclass{ol-softwaremanual}
+\documentclass[final]{ol-softwaremanual}
+%\documentclass{article}
 
 \input{src/preamble}
 
 \title{A Practical Ontology Development Guide}
-\author{Martin Glauer, Markus Schilling, Mirjam Stappel}
-\version{0.1}
-\pagenumbering{alph}
+\author{Martin Glauer, Markus Schilling, Mirjam Stappel, Colin Heidfeld}
+\version{0.1.1}
 
 \begin{document}
 
 \maketitle
 
+\listoftodos
+
 \tableofcontents
 
 \newpage
 
-\todo{
-* Ontology, really? \\ 
-* Requirements \\
-  * Scope
-  * }
+\pagenumbering{arabic}
+
 \input{src/introduction}
 \input{src/ontologies/main}
 \input{src/guidelines/main}
 %\input{src/external-use}
 \input{src/gh-workflow}
-
+\input{src/related}
 \section{References}
 \bibliographystyle{plain}
 \bibliography{literature}
